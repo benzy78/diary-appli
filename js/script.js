@@ -1,54 +1,6 @@
 /*
-カレンダーの日付と日記の入力欄のリンク
+カレンダーの作成
 */
-// 指定した日付の日記を表示
-function presetDiary(dateStr) {
-    // ボタンのdate属性にキーの日付部分を指定する
-    var button = document.getElementById("button");
-    button.setAttribute("data-date", dateStr);
-
-    // 日記の日付を表示
-    var diary_date = document.getElementById("diary_date");
-    diary_date.innerHTML = dateStr;
-
-    // localStorageから日記のタイトルと本文を取得
-    var title = localStorage[dateStr + "_title"];
-    var body = localStorage[dateStr + "_body"];
-
-    // 日記の入力欄を取得
-    var diary_title = document.getElementById('diary_title');
-    var diary_body = document.getElementById('diary_body');
-    // 日記のデータがあれば表示
-    if (title) {
-        diary_title.value = title;
-    } else {
-        diary_title.value = "";
-    }
-    if (body) {
-        diary_body.value = body;
-    } else {
-        diary_body.value = "";
-    }
-}
-
-// 日記を保存
-function onSave(obj) {
-    // ボタンのdata-date属性から日付文字列を取得
-    var dateStr = obj.getAttribute("data-date");
-
-    // 日記の入力欄を取得
-    var diary_title = document.getElementById('diary_title').value;
-    var diary_body = document.getElementById('diary_body').value;
-
-    // 日記を保存
-    localStorage[dateStr + "_title"] = diary_title;
-    localStorage[dateStr + "_body"] = diary_body;
-    // 完了メッセージを表示
-    window.alert("日記を投稿しました");
-    // ページをリロード
-    location.reload();
-}
-
 window.addEventListener("DOMContentLoaded", function () {
     // 本日の日付を取得
     var date = new Date();
@@ -134,3 +86,59 @@ window.addEventListener("DOMContentLoaded", function () {
     }
     document.getElementById("calendar").innerHTML = "<table>" + captionHtml + weekdaysStr + htmlStr + "</table>";
 });
+
+
+/*
+カレンダーの日付と日記の入力欄のリンク
+*/
+// 指定した日付の日記を表示
+function presetDiary(dateStr) {
+    // ボタンのdate属性にキーの日付部分を指定する
+    var button = document.getElementById("button");
+    button.setAttribute("data-date", dateStr);
+
+    // 日記の日付を表示
+    var diary_date = document.getElementById("diary_date");
+    diary_date.innerHTML = dateStr;
+
+    // localStorageから日記のタイトルと本文を取得
+    var title = localStorage[dateStr + "_title"];
+    var body = localStorage[dateStr + "_body"];
+
+    // 日記の入力欄を取得
+    var diary_title = document.getElementById('diary_title');
+    var diary_body = document.getElementById('diary_body');
+    // 日記のデータがあれば表示
+    if (title) {
+        diary_title.value = title;
+    } else {
+        diary_title.value = "";
+    }
+    if (body) {
+        diary_body.value = body;
+    } else {
+        diary_body.value = "";
+    }
+}
+
+
+/*
+書いた日記を保存
+*/
+// 日記を保存
+function onSave(obj) {
+    // ボタンのdata-date属性から日付文字列を取得
+    var dateStr = obj.getAttribute("data-date");
+
+    // 日記の入力欄を取得
+    var diary_title = document.getElementById('diary_title').value;
+    var diary_body = document.getElementById('diary_body').value;
+
+    // 日記を保存
+    localStorage[dateStr + "_title"] = diary_title;
+    localStorage[dateStr + "_body"] = diary_body;
+    // 完了メッセージを表示
+    window.alert("日記を投稿しました");
+    // ページをリロード
+    location.reload();
+}

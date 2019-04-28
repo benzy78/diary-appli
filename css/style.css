@@ -98,7 +98,7 @@ a:active {
 }
 
 table {
-	border: 1px solid #1976d2;
+	border: 1px solid #512DA8;
 	border-collapse: collapse;
 	border-spacing: 0;
 	table-layout: fixed;
@@ -107,7 +107,7 @@ table {
 
 th,
 td {
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	padding: 4px 6px;
 	text-align: left;
 	vertical-align: top;
@@ -117,7 +117,7 @@ input,
 textarea {
 	-webkit-appearance: none;
 	background-image: none;
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	border-radius: 0;
 	font-family: inherit;
 	font-size: inherit;
@@ -126,7 +126,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	box-shadow: none;
 	outline: none;
 }
@@ -166,7 +166,7 @@ input[type="radio"] + span {
 input[type="radio"] + span::before {
 	-webkit-transform: translateY(-50%);
 	background: #fff;
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -185,7 +185,7 @@ input[type="radio"] + span::after {
 
 input[type="radio"] + span:focus,
 input[type="radio"] + span:checked {
-	background: #2196f3;
+	background: #673ab7;
 	border: 1px solid #fff;
 	box-shadow: none;
 	outline: none;
@@ -193,7 +193,7 @@ input[type="radio"] + span:checked {
 
 input[type="radio"]:checked + span::after {
 	-webkit-transform: translateY(-50%);
-	background: #2196f3;
+	background: #673ab7;
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -222,7 +222,7 @@ input[type="checkbox"] + span {
 input[type="checkbox"] + span::before {
 	-webkit-transform: translateY(-50%);
 	background: #fff;
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	border-radius: 2px;
 	content: "";
 	display: block;
@@ -241,8 +241,8 @@ input[type="checkbox"] + span::after {
 
 input[type="checkbox"]:checked + span::after {
 	-webkit-transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 3px solid #2196f3;
-	border-left: 3px solid #2196f3;
+	border-bottom: 3px solid #673ab7;
+	border-left: 3px solid #673ab7;
 	content: "";
 	display: block;
 	height: 0.6em;
@@ -259,7 +259,7 @@ select {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	background-image: none;
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	border-radius: 0;
 	cursor: pointer;
 	font-family: inherit;
@@ -273,7 +273,7 @@ select::-ms-expand {
 }
 
 select:focus {
-	border: 1px solid #2196f3;
+	border: 1px solid #673ab7;
 	box-shadow: none;
 	outline: none;
 }
@@ -325,15 +325,15 @@ select:focus {
 }
 
 .calendar-box .calendar table {
-	border: solid 1px #c8e4ff;
+	border: solid 1px #9575cd;
 }
 
 .calendar-box .calendar table caption {
-	background: #c8e4ff;
-	border: solid 1px #c8e4ff;
+	background: #9575cd;
+	border: solid 1px #9575cd;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	color: #2196f3;
+	color: #fff;
 	font-weight: bold;
 	padding: 1em;
 }
@@ -344,7 +344,7 @@ select:focus {
 
 .calendar-box .calendar table td {
 	background-color: #fff;
-	border: solid 1px #c8e4ff;
+	border: solid 1px #9575cd;
 	padding: 0;
 }
 
@@ -357,7 +357,7 @@ select:focus {
 }
 
 .calendar-box .calendar table td a:hover {
-	background-color: #c8e4ff;
+	background-color: #9575cd;
 }
 
 .calendar-box .calendar table td a u {
@@ -387,10 +387,10 @@ select:focus {
 }
 
 .diary-box .diary_date {
-	background-color: #c8e4ff;
+	background-color: #9575cd;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	color: #2196f3;
+	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -403,7 +403,8 @@ select:focus {
 }
 
 .diary-box .diary_contents input {
-	border: 2px solid #c8e4ff;
+	border: 2px solid #9575cd;
+	border-radius: 5px;
 	font-size: 14px;
 	margin: 0 auto 20px auto;
 	width: 100%;
@@ -414,11 +415,12 @@ select:focus {
 }
 
 .diary-box .diary_contents input[type=text]:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .diary-box .diary_contents textarea {
-	border: 2px solid #c8e4ff;
+	border: 2px solid #9575cd;
+	border-radius: 5px;
 	font-size: 14px;
 	height: 200px;
 	margin-bottom: 20px;
@@ -427,12 +429,12 @@ select:focus {
 }
 
 .diary-box .diary_contents textarea:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .diary-box .diary_contents input[type=button] {
-	background-color: #2196f3;
-	border: 1px solid #2196f3;
+	background-color: #673ab7;
+	border: 1px solid #673ab7;
 	color: #fff;
 	cursor: pointer;
 	font-weight: bold;
@@ -440,7 +442,7 @@ select:focus {
 }
 
 .diary-box .diary_contents input[type=button]:hover {
-	background-color: #1976d2;
+	background-color: #512DA8;
 }
 
 /*
@@ -460,7 +462,7 @@ select:focus {
 */
 
 .header {
-	background-color: #2196f3;
+	background-color: #673ab7;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	color: #fff;
 	padding: 10px 20px;
