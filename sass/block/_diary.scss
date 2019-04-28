@@ -47,12 +47,13 @@
             border: solid 1px $SubColor2;
 
             caption {
-                padding: 1em;
+                padding: 0.5em;
                 border: solid 1px $SubColor2;
                 border-top-right-radius: 5px;
                 border-top-left-radius: 5px;
                 background: $SubColor2;
                 color: $white;
+                font-size: 20px;
                 font-weight: bold;
                 @include sp{
                     padding: 0.5em;
@@ -124,13 +125,13 @@
     }
 
     .diary_date {
-        padding: 1em;
+        padding: 0.5em;
         margin-bottom: 20px;
         background-color: $SubColor2;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         color: $white;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         text-align: center;
         @include sp{
