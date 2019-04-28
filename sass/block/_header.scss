@@ -1,7 +1,19 @@
 /*
     header
 */
+.header{
+    padding: 10px 20px;
+    background-color: $MainColor;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color: $white;
 
+    &__logo{
+        font-size: 24px;
+        @include sp{
+            font-size: 18px;
+        }
+    }
+}
 /*
     header end
 */

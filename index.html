@@ -21,21 +21,31 @@
 
 <body>
     <div class="wrapper">
-
         <!-- header -->
         <header class="header">
             <div class="inner">
-
+                <h1 class="header__logo">Diary Application</h1>
             </div>
-        </header><!-- header end -->
+        </header>
+        <!-- header end -->
 
-
-        <!-- footer -->
-        <footer class="footer">
-            <div class="inner">
-
+        <!-- main -->
+        <main class="main">
+            <div class="frame-box">
+                <div class="calendar-box">
+                    <div id="calendar" class="calendar"></div>
+                </div>
+                <div class="diary-box">
+                    <div id="diary_date" class="diary_date"></div>
+                    <div class="diary_contents">
+                        <input type="text" id="diary_title" placeholder="title">
+                        <textarea id="diary_body" placeholder="text"></textarea>
+                        <input type="button" id="button" onclick="onSave(this)" value="保存">
+                    </div>
+                </div>
             </div>
-        </footer><!-- footer end -->
+        </main>
+        <!-- main end -->
 
     </div>
     <!--wrapper end-->

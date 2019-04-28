@@ -1,0 +1,543 @@
+/*
+    リセットCSS等の基本設定
+*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background: #f7f7f7;
+	color: #363636;
+	font-family: "Meiryo UI", "Meiryo", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "Noto Sans Japanese", roboto, sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+blockquote,
+code,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+iframe,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+	display: block;
+}
+
+li,
+ol {
+	list-style: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
+table {
+	border: 1px solid #1976d2;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+th,
+td {
+	border: 1px solid #2196f3;
+	padding: 4px 6px;
+	text-align: left;
+	vertical-align: top;
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+	background-image: none;
+	border: 1px solid #2196f3;
+	border-radius: 0;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 8px;
+}
+
+input:focus,
+textarea:focus {
+	border: 1px solid #2196f3;
+	box-shadow: none;
+	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+input[type="submit"] {
+	border: none;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	border: none;
+	outline: none;
+}
+
+input[type="submit"] ::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + span {
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 0.2em 0;
+	padding: 0 0 0 1.2em;
+	position: relative;
+}
+
+input[type="radio"] + span::before {
+	-webkit-transform: translateY(-50%);
+	background: #fff;
+	border: 1px solid #2196f3;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	height: 1em;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1em;
+}
+
+input[type="radio"] + span::after {
+	opacity: 0;
+	transition: opacity 0.3s ease 0s;
+}
+
+input[type="radio"] + span:focus,
+input[type="radio"] + span:checked {
+	background: #2196f3;
+	border: 1px solid #fff;
+	box-shadow: none;
+	outline: none;
+}
+
+input[type="radio"]:checked + span::after {
+	-webkit-transform: translateY(-50%);
+	background: #2196f3;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	height: 0.6em;
+	left: 0.2em;
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0.6em;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"] + span {
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 0.2em 0;
+	padding: 0 0 0 1.2em;
+	position: relative;
+	transition: all 0.3s ease 0s;
+}
+
+input[type="checkbox"] + span::before {
+	-webkit-transform: translateY(-50%);
+	background: #fff;
+	border: 1px solid #2196f3;
+	border-radius: 2px;
+	content: "";
+	display: block;
+	height: 1em;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1em;
+}
+
+input[type="checkbox"] + span::after {
+	opacity: 0;
+	transition: opacity 0.3s ease 0s;
+}
+
+input[type="checkbox"]:checked + span::after {
+	-webkit-transform: translateY(-50%) rotate(-45deg);
+	border-bottom: 3px solid #2196f3;
+	border-left: 3px solid #2196f3;
+	content: "";
+	display: block;
+	height: 0.6em;
+	left: 0;
+	margin-top: -0.2em;
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) rotate(-45deg);
+	width: 1em;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-image: none;
+	border: 1px solid #2196f3;
+	border-radius: 0;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 1em;
+	padding: 8px 24px 8px 8px;
+	width: 100%;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+select:focus {
+	border: 1px solid #2196f3;
+	box-shadow: none;
+	outline: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.inner {
+	margin: 0 auto;
+	max-width: 1100px;
+	width: 85%;
+}
+
+.wrapper {
+	overflow: hidden;
+}
+
+/*
+    モジュール
+*/
+
+/*
+    diary
+*/
+
+.main {
+	padding: 40px 30px;
+}
+
+.frame-box {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1100px;
+	width: 85%;
+}
+
+.calendar-box {
+	flex: 0 0 auto;
+	margin-right: 40px;
+	max-width: calc(60% - 40px);
+	width: calc(60% - 40px);
+}
+
+.calendar-box .calendar {
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-box .calendar table {
+	border: solid 1px #c8e4ff;
+}
+
+.calendar-box .calendar table caption {
+	background: #c8e4ff;
+	border: solid 1px #c8e4ff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #2196f3;
+	font-weight: bold;
+	padding: 1em;
+}
+
+.calendar-box .calendar table td.today {
+	background: #fff;
+}
+
+.calendar-box .calendar table td {
+	background-color: #fff;
+	border: solid 1px #c8e4ff;
+	padding: 0;
+}
+
+.calendar-box .calendar table td a {
+	cursor: pointer;
+	display: inline-block;
+	padding: 0.8em 1em;
+	transition: all 0.3s ease-in-out;
+	width: 100%;
+}
+
+.calendar-box .calendar table td a:hover {
+	background-color: #c8e4ff;
+}
+
+.calendar-box .calendar table td a u {
+	font-weight: bold;
+}
+
+.calendar-box * {
+	font-size: 16px;
+	text-align: center;
+}
+
+.calendar .sat {
+	color: #4169e1;
+}
+
+.calendar .sun {
+	color: #ff0000;
+}
+
+.diary-box {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	flex: 0 0 auto;
+	max-width: 40%;
+	width: 40%;
+}
+
+.diary-box .diary_date {
+	background-color: #c8e4ff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #2196f3;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 1em;
+	text-align: center;
+}
+
+.diary-box .diary_contents {
+	padding: 0 20px;
+}
+
+.diary-box .diary_contents input {
+	border: 2px solid #c8e4ff;
+	font-size: 14px;
+	margin: 0 auto 20px auto;
+	width: 100%;
+}
+
+.diary-box .diary_contents input[type=text] {
+	transition: all 0.3s ease-in-out;
+}
+
+.diary-box .diary_contents input[type=text]:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.diary-box .diary_contents textarea {
+	border: 2px solid #c8e4ff;
+	font-size: 14px;
+	height: 200px;
+	margin-bottom: 20px;
+	transition: all 0.3s ease-in-out;
+	width: 100%;
+}
+
+.diary-box .diary_contents textarea:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.diary-box .diary_contents input[type=button] {
+	background-color: #2196f3;
+	border: 1px solid #2196f3;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease-in-out;
+}
+
+.diary-box .diary_contents input[type=button]:hover {
+	background-color: #1976d2;
+}
+
+/*
+    diary end
+*/
+
+/*
+    footer
+*/
+
+/*
+    footer end
+*/
+
+/*
+    header
+*/
+
+.header {
+	background-color: #2196f3;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 10px 20px;
+}
+
+.header__logo {
+	font-size: 24px;
+}
+
+/*
+    header end
+*/
+
+@media (max-width: 992px) {
+
+.inner {
+	width: 95%;
+}
+
+.frame-box {
+	width: 95%;
+}
+
+}
+
+@media (max-width: 768px) {
+
+.main {
+	padding: 20px;
+}
+
+.frame-box {
+	width: 100%;
+}
+
+.calendar-box {
+	margin-bottom: 20px;
+	margin-right: 0;
+	max-width: 100%;
+	width: 100%;
+}
+
+.calendar-box .calendar table caption {
+	font-size: 14px;
+	padding: 0.5em;
+}
+
+.calendar-box .calendar table td {
+	font-size: 14px;
+}
+
+.calendar-box .calendar table td a {
+	font-size: 14px;
+	padding: 0.5em;
+}
+
+.diary-box {
+	max-width: 100%;
+	width: 100%;
+}
+
+.diary-box .diary_date {
+	font-size: 14px;
+	padding: 0.5em;
+}
+
+.diary-box .diary_contents input[type=text] {
+	font-size: 12px;
+}
+
+.diary-box .diary_contents textarea {
+	font-size: 12px;
+}
+
+.header__logo {
+	font-size: 18px;
+}
+
+}
+
