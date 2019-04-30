@@ -179,7 +179,7 @@
         }
     }
 
-    &__button {
+    &__save {
         background-color: $MainColor;
         border: 1px solid $MainColor;
         color: $white;
@@ -188,7 +188,22 @@
         transition: all 0.3s ease-in-out;
 
         &:hover {
-            background-color: $SubColor;
+            background-color: $SubColor2;
+            border-color: $SubColor2;
+        }
+    }
+
+    &__delete {
+        background-color: $white;
+        border: 1px solid $AccentColor;
+        color: $AccentColor;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            color: $white;
+            background-color: $AccentColor;
         }
     }
 }

@@ -434,7 +434,7 @@ input {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.diary__button {
+.diary__save {
 	background-color: #673ab7;
 	border: 1px solid #673ab7;
 	color: #fff;
@@ -443,8 +443,23 @@ input {
 	transition: all 0.3s ease-in-out;
 }
 
-.diary__button:hover {
-	background-color: #512DA8;
+.diary__save:hover {
+	background-color: #9575cd;
+	border-color: #9575cd;
+}
+
+.diary__delete {
+	background-color: #fff;
+	border: 1px solid #D84315;
+	color: #D84315;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease-in-out;
+}
+
+.diary__delete:hover {
+	background-color: #D84315;
+	color: #fff;
 }
 
 /*
