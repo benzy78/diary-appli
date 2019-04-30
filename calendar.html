@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>日記アプリ</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!--style css-->
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese" rel="stylesheet">
+    <!-- wow -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
+        type="text/css" media="all">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header class="header">
+            <div class="inner">
+                <h1 class="header__logo">Diary Application</h1>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- main -->
+        <main class="main">
+            <div class="frame-box">
+                <div class="calendar-box">
+                    <div id="calendar" class="calendar"></div>
+                </div>
+                <div class="diary-box">
+                    <div id="diary_date" class="diary_date"></div>
+                    <div class="diary_contents">
+                        <input type="text" id="diary_title" placeholder="title">
+                        <textarea id="diary_body" placeholder="text"></textarea>
+                        <input type="button" id="button" onclick="onSave(this)" value="保存">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- main end -->
+
+    </div>
+    <!--wrapper end-->
+
+    <!-- script js-->
+    <script src="js/script.js"></script>
+    <!-- wow -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+</body>
+
+</html>

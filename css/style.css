@@ -466,7 +466,7 @@ select:focus {
 	background-color: #673ab7;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	color: #fff;
-	padding: 10px 20px;
+	padding: 10px 30px;
 }
 
 .header__logo {

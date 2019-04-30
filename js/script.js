@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
     var lastDate = new Date(year, month, 0);
 
     // 本日の日記のプリセット
-    var todayStr = year + "." + month + "." + today;
+    var todayStr = year + "年" + month + "月" + today + "日";
     presetDiary(todayStr);
 
     // 当月の表示
@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", function () {
         // i日の曜日を取得
         var weekDay = date.getDay();
         // 日記を保存する際の日付部分のキー
-        var dateStr = year + "." + month + "." + i;
+        var dateStr = year + "年" + month + "月" + i + "日";
 
         // 日を取得
         var cellStr = date.getDate();
@@ -127,7 +127,7 @@ function presetDiary(dateStr) {
 */
 // 日記を保存
 function onSave(obj) {
-    // ボタンのdata-date属性から日付文字列を取得
+    // ボタンのdata-date属性から日付の文字列を取得
     var dateStr = obj.getAttribute("data-date");
 
     // 日記の入力欄を取得
@@ -135,8 +135,8 @@ function onSave(obj) {
     var diary_body = document.getElementById('diary_body').value;
 
     // 日記を保存
-    localStorage[dateStr + "_title"] = diary_title;
-    localStorage[dateStr + "_body"] = diary_body;
+    localStorage[dateStr + "_title"] = diary_title;    // ここがわからん_titleってなに？
+    localStorage[dateStr + "_body"] = diary_body;      // ここがわからん
     // 完了メッセージを表示
     window.alert("日記を投稿しました");
     // ページをリロード
