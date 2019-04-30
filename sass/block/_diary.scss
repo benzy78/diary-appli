@@ -97,7 +97,8 @@
                         background-color: $SubColor2;
                     }
 
-                    u {
+                    .active {
+                        border-bottom: 2px solid;
                         font-weight: bold;
                     }
                 }

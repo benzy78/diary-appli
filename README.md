@@ -56,3 +56,9 @@ var 変数名 = storage[キー];
 //保存したデータの削除
 storage.removeItem(キー);
 ```
+## 学び
+* こまめに定義した変数をconsole.logで出力して、なにを定義してるのかしっかり確認する。
+
+* Dateオブジェクトで`new Date(year,month,day)`で日付を指定する場合は、(month + 1)として計算されるため、`firstDate`では`month - 1`にしている。
+
+* `presetDiary`はイベントハンドラの関数のことだ。

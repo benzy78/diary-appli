@@ -375,7 +375,8 @@ input {
 	background-color: #9575cd;
 }
 
-.calendar__contents table td a u {
+.calendar__contents table td a .active {
+	border-bottom: 2px solid;
 	font-weight: bold;
 }
 
