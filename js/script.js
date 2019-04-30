@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         htmlStr += "</tr>";
     }
-    document.getElementById("calendar").innerHTML = "<table>" + captionHtml + weekdaysStr + htmlStr + "</table>";
+    document.getElementById("calendar__contents").innerHTML = "<table>" + captionHtml + weekdaysStr + htmlStr + "</table>";
 });
 
 
@@ -94,11 +94,11 @@ window.addEventListener("DOMContentLoaded", function () {
 // 指定した日付の日記を表示
 function presetDiary(dateStr) {
     // ボタンのdate属性にキーの日付部分を指定する
-    var button = document.getElementById("button");
+    var button = document.getElementById("diary__save");
     button.setAttribute("data-date", dateStr);
 
     // 日記の日付を表示
-    var diary_date = document.getElementById("diary_date");
+    var diary_date = document.getElementById("diary__date");
     diary_date.innerHTML = dateStr;
 
     // localStorageから日記のタイトルと本文を取得
@@ -106,8 +106,8 @@ function presetDiary(dateStr) {
     var body = localStorage[dateStr + "_body"];
 
     // 日記の入力欄を取得
-    var diary_title = document.getElementById('diary_title');
-    var diary_body = document.getElementById('diary_body');
+    var diary_title = document.getElementById('diary__title');
+    var diary_body = document.getElementById('diary__body');
     // 日記のデータがあれば表示
     if (title) {
         diary_title.value = title;
@@ -131,8 +131,8 @@ function onSave(obj) {
     var dateStr = obj.getAttribute("data-date");
 
     // 日記の入力欄を取得
-    var diary_title = document.getElementById('diary_title').value;
-    var diary_body = document.getElementById('diary_body').value;
+    var diary_title = document.getElementById('diary__title').value;
+    var diary_body = document.getElementById('diary__body').value;
 
     // 日記を保存
     localStorage[dateStr + "_title"] = diary_title;    // ここがわからん_titleってなに？
