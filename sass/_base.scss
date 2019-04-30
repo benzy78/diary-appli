@@ -259,3 +259,11 @@ select {
 .wrapper{
   overflow: hidden;
 }
+
+input {
+	margin: 0 auto 20px auto;
+	border: 2px solid $SubColor2;
+	border-radius: 5px;
+	font-size: 14px;
+	width: 100%;
+}
