@@ -354,6 +354,8 @@ input {
 .calendar__contents {
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	width: 48%;
 }
 
 .calendar__contents * {
@@ -400,15 +402,22 @@ input {
 
 .calendar__contents table td a .active {
 	border-bottom: 2px solid;
+	color: #ffca28;
 	font-weight: bold;
 }
 
 .calendar__contents table .sat {
-	color: #4169e1;
+	color: #0000ff;
 }
 
 .calendar__contents table .sun {
 	color: #ff0000;
+}
+
+.calendar__contents--02 {
+	display: inline-block;
+	margin-top: 40px;
+	width: 50%;
 }
 
 .task {

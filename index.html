@@ -28,17 +28,20 @@
 
         <!-- main -->
         <main class="main">
-                <div class="calendar">
+            <div class="calendar">
+                <div class="slide">
                     <div id="calendar__contents" class="calendar__contents"></div>
+                    <div id="calendar__contents--02" class="calendar__contents calendar__contents--02"></div>
                 </div>
-                <div class="task">
-                    <div id="task__date" class="task__date"></div>
-                    <div class="task__contents">
-                        <textarea id="task__body" class="task__body" placeholder="今日のタスク"></textarea>
-                        <textarea id="task__reflect" class="task__reflect" placeholder="タスクの達成状況と反省"></textarea>
-                        <input type="button" id="task__save" class="task__save" onclick="onSave(this)" value="保存">
-                    </div>
+            </div>
+            <div class="task">
+                <div id="task__date" class="task__date"></div>
+                <div class="task__contents">
+                    <textarea id="task__body" class="task__body" placeholder="今日のタスク"></textarea>
+                    <textarea id="task__reflect" class="task__reflect" placeholder="タスクの達成状況と反省"></textarea>
+                    <input type="button" id="task__save" class="task__save" onclick="onSave(this)" value="保存">
                 </div>
+            </div>
         </main>
         <!-- main end -->
 

@@ -35,8 +35,10 @@
     }
 
     &__contents {
+        display: inline-block;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
+        width: 48%;
 
         * {
             text-align: center;
@@ -92,14 +94,15 @@
                     }
 
                     .active {
-                        border-bottom: 2px solid;
+                        color: #ffca28;
                         font-weight: bold;
+                        border-bottom: 2px solid;
                     }
                 }
             }
 
             .sat {
-                color: #4169e1;
+                color: #0000ff;
             }
 
             .sun {
@@ -107,6 +110,12 @@
             }
         }
     }
+}
+
+.calendar__contents--02{
+    margin-top: 40px;
+    display: inline-block;
+    width: 50%;
 }
 
 // 日記
