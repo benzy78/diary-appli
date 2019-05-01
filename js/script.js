@@ -14,9 +14,9 @@ window.addEventListener("DOMContentLoaded", function () {   // DOMContentLoaded�
     // 翌月の0日を指定して当月の月末日を取得
     var lastDate = new Date(year, month, 0);    //日にちを0にすると前の月の最後の日付になる
 
-    // 本日の日記の日付の設定
+    // 本日のタスクの日付の設定
     var todayStr = year + "年" + month + "月" + today + "日";
-    presetDiary(todayStr);    // presetDiary関数の呼び出し
+    presetTask(todayStr);    // presetDiary関数の呼び出し
 
     // カレンダーのキャプションを表示
     var table_title = year + "年 " + month + "月";
@@ -54,13 +54,13 @@ window.addEventListener("DOMContentLoaded", function () {   // DOMContentLoaded�
         var date = new Date(year, month - 1, i);    //インスタンスの生成
         // i日の曜日を取得
         var weekDay = date.getDay();    //各日付の曜日を配列で取得してる（1,2,3,4,5,6,0,1,2,3...）のように
-        // 日記を保存する際の日付部分のキー
+        // タスクを保存する際の日付部分のキー
         var dateStr = year + "年" + month + "月" + i + "日";    //~年~月~日の形式で日付を1日〜30まで取得
 
         // 日を取得
         var cellStr = date.getDate();    // １〜３０日までの日にちを取得
-        // 日記データがあれば 日付の表示を変更する
-        if (localStorage[dateStr + "_title"]) cellStr = "<span class='active'>" + cellStr + "</span>";
+        // タスクデータがあれば 日付の表示を変更する
+        if (localStorage[dateStr + "_body"]) cellStr = "<span class='active'>" + cellStr + "</span>";
 
         // 日曜日の場合は行の開始なのでtr開始タグ
         if (weekDay == 0) htmlStr += "<tr>";
@@ -72,8 +72,8 @@ window.addEventListener("DOMContentLoaded", function () {   // DOMContentLoaded�
         } else {
             htmlStr += "<td>";
         }
-        // 日付をクリックした際に日記を表示（空欄はaタグにしないためにこの処理をしてる）
-        htmlStr += "<a onclick='presetDiary(\"" + dateStr + "\");'>" + cellStr + "</a></td>";    //`\"" "\"`これ何？
+        // 日付をクリックした際にタスクを表示（空欄はaタグにしないためにこの処理をしてる）
+        htmlStr += "<a onclick='presetTask(\"" + dateStr + "\");'>" + cellStr + "</a></td>";    //`\"" "\"`これ何？
 
         // 土曜日の場合は行の終わりなのでtr終了タグ
         if (weekDay == 6) htmlStr += "</tr>\n";     //`\n`は改行の意味
@@ -96,57 +96,57 @@ window.addEventListener("DOMContentLoaded", function () {   // DOMContentLoaded�
 
 
 /*
-カレンダーの日付と日記の入力欄のリンク
+カレンダーの日付とタスクの入力欄のリンク
 */
-// 指定した日付の日記を表示
-function presetDiary(dateStr) {     //日付をクリックした際の処理
+// 指定した日付のタスクを表示
+function presetTask(dateStr) {     //日付をクリックした際の処理
     // ボタンのdate属性にキーの日付を指定する
-    var saveBtn = document.getElementById("diary__save");
+    var saveBtn = document.getElementById("task__save");
     saveBtn.setAttribute("data-date", dateStr);
 
-    // 日記の日付を表示
-    var diary_date = document.getElementById("diary__date");
-    diary_date.innerHTML = dateStr;
+    // タスクの日付を表示
+    var task_date = document.getElementById("task__date");
+    task_date.innerHTML = dateStr;
 
-    // localStorageから日記のタイトルと本文を取得
-    var title = localStorage[dateStr + "_title"];    //`[dateStr + "_title"]`がキーに当たる部分、`_`このアンダースコアは別になんでもいい。これに何かプログラム的な意味はない。
+    // localStorageからタスクの内容と反省を取得
+    var reflect = localStorage[dateStr + "_reflect"];    //`[dateStr + "_reflect"]`がキーに当たる部分、`_`このアンダースコアは別になんでもいい。これに何かプログラム的な意味はない。
     var body = localStorage[dateStr + "_body"];      //これはすでに保存されているlocalStorageのキー（値？）を変数に代入してるだけで、保存してるわけじゃない。 var 変数名 = localStorage~だから、逆に`変数名` = localStorage~の場合は保存になる。（保存と参照の区別がついてなかった）
 
-    // 日記の入力欄の値を取得
-    var diary_title = document.getElementById('diary__title');      //.valueつけたら値を取得できなくなった。なぜ？
-    var diary_body = document.getElementById('diary__body');
+    // タスクの入力欄の値を取得
+    var task_reflect = document.getElementById('task__reflect');      //.valueつけたら値を取得できなくなった。なぜ？
+    var task_body = document.getElementById('task__body');
 
-    // 日記のデータがあれば表示
-    if (title) {    //このif文の書き方がよくわからん。「もしタイトルの値が定義されていれば」と言う意味のif文か？
-        diary_title.value = title;    //正確にはlocalStorageの値に、入力欄に記載された値を代入してる感じ。保存してるわけではない？
+    // タスクのデータがあれば表示
+    if (reflect) {    //このif文の書き方がよくわからん。「もしタイトルの値が定義されていれば」と言う意味のif文か？
+        task_reflect.value = reflect;    //正確にはlocalStorageの値に、入力欄に記載された値を代入してる感じ。保存してるわけではない？
     } else {
-        diary_title.value = "";
+        task_reflect.value = "";
     }
 
     if (body) {
-        diary_body.value = body;    //正確にはlocalStorageの値に、入力欄に記載された値を代入してる感じ。これは保存してるんじゃなくて、入力欄にlocalStorageで保存されている値を表示してるんだこれは。
+        task_body.value = body;    //正確にはlocalStorageの値に、入力欄に記載された値を代入してる感じ。これは保存してるんじゃなくて、入力欄にlocalStorageで保存されている値を表示してるんだこれは。
     } else {
-        diary_body.value = "";
+        task_body.value = "";
     }
 }
 
 /*
-書いた日記を保存
+書いたタスクを保存
 */
-// 日記を保存
+// タスクを保存
 function onSave(obj) {      //保存ボタンを押した時の処理・この`obj`の引数の意味がよくわからん。ボタン要素のオブジェクトらしい。
     // ボタンのdata-date属性から日付の文字列を取得
     var dateStr = obj.getAttribute("data-date");    //dateStrがかなりの肝なきがする
 
-    // 日記の入力欄を取得
-    var diary_title = document.getElementById('diary__title').value;
-    var diary_body = document.getElementById('diary__body').value;
+    // タスクの入力欄を取得
+    var task_reflect = document.getElementById('task__reflect').value;
+    var task_body = document.getElementById('task__body').value;
 
-    // 日記を保存
-    localStorage[dateStr + "_title"] = diary_title;    // 日付_titleでキー名を変数に代入してる。（保存と参照の区別がついてなかった）
-    localStorage[dateStr + "_body"] = diary_body;      // 同上
+    // タスクを保存
+    localStorage[dateStr + "_reflect"] = task_reflect;    // 日付_reflectでキー名を変数に代入してる。（保存と参照の区別がついてなかった）
+    localStorage[dateStr + "_body"] = task_body;      // 同上
     // 完了メッセージを表示
-    window.alert("日記を投稿しました");
+    window.alert("タスクを投稿しました");
     // ページをリロード
     location.reload();
 }

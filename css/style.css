@@ -305,11 +305,34 @@ input {
 */
 
 /*
-    diary
+    footer
 */
 
 /*
-    BEMで書き直し
+    footer end
+*/
+
+/*
+    header
+*/
+
+.header {
+	background-color: #673ab7;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 10px 30px;
+}
+
+.header__logo {
+	font-size: 24px;
+}
+
+/*
+    header end
+*/
+
+/*
+    task
 */
 
 .main {
@@ -417,7 +440,7 @@ input {
 	border: 2px solid #9575cd;
 	border-radius: 5px;
 	font-size: 14px;
-	height: 100px;
+	height: 150px;
 	margin-bottom: 20px;
 	transition: all 0.3s ease-in-out;
 	width: 100%;
@@ -456,34 +479,7 @@ input {
 }
 
 /*
-    BEMで書き直し end
-*/
-
-/*
-    footer
-*/
-
-/*
-    footer end
-*/
-
-/*
-    header
-*/
-
-.header {
-	background-color: #673ab7;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	color: #fff;
-	padding: 10px 30px;
-}
-
-.header__logo {
-	font-size: 24px;
-}
-
-/*
-    header end
+    task end
 */
 
 @media (max-width: 992px) {
@@ -499,6 +495,10 @@ input {
 }
 
 @media (max-width: 768px) {
+
+.header__logo {
+	font-size: 18px;
+}
 
 .main {
 	padding: 20px;
@@ -542,10 +542,6 @@ input {
 
 .task__reflect {
 	font-size: 12px;
-}
-
-.header__logo {
-	font-size: 18px;
 }
 
 }
