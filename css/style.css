@@ -456,7 +456,7 @@ input {
 .task__body {
 	border: 2px solid #9575cd;
 	border-radius: 5px;
-	font-size: 14px;
+	font-size: 16px;
 	height: 150px;
 	margin-bottom: 20px;
 	transition: all 0.3s ease-in-out;
@@ -470,7 +470,7 @@ input {
 .task__reflect {
 	border: 2px solid #9575cd;
 	border-radius: 5px;
-	font-size: 14px;
+	font-size: 16px;
 	height: 200px;
 	margin-bottom: 20px;
 	transition: all 0.3s ease-in-out;
@@ -514,7 +514,8 @@ input {
 @media (max-width: 768px) {
 
 .header__logo {
-	font-size: 18px;
+	font-size: 20px;
+	text-align: center;
 }
 
 .main {
@@ -530,16 +531,16 @@ input {
 }
 
 .calendar__contents table caption {
-	font-size: 14px;
+	font-size: 18px;
 	padding: 0.5em;
 }
 
 .calendar__contents table td {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .calendar__contents table td a {
-	font-size: 14px;
+	font-size: 16px;
 	padding: 0.5em;
 }
 
@@ -561,16 +562,16 @@ input {
 }
 
 .task__date {
-	font-size: 14px;
+	font-size: 18px;
 	padding: 0.5em;
 }
 
 .task__body {
-	font-size: 12px;
+	font-size: 16px;
 }
 
 .task__reflect {
-	font-size: 12px;
+	font-size: 16px;
 }
 
 }
