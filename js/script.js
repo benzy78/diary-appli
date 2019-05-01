@@ -1,46 +1,30 @@
 /*
 カレンダーの作成
 */
-window.addEventListener("DOMContentLoaded", function () {// DOMContentLoadedイベントはページの読み込みが終わった際に全体の処理を開始するようにするイベント
+window.addEventListener("DOMContentLoaded", function () {   // DOMContentLoadedイベントはページの読み込みが終わった際に全体の処理を開始するようにするイベント
     // 本日の日付を取得
     var date = new Date();    // Dateオブジェクトのインスタンスを生成
     var year = date.getFullYear();    // 現在の西暦を取得
     var month = date.getMonth() + 1;    // 現在の月を取得
     var today = date.getDate();    // 現在の日にちを取得
 
-    // console.log(date);
-    // console.log(year);
-    // console.log(month);
-    // console.log(today);
-
     // 当月1日の日付を取得
     var firstDate = new Date(year, month - 1, 1);    // Dateオブジェクトで`new Date(year,month,day)`で日付を指定する場合は、(month + 1)として計算されるため、`firstDate`では`month - 1`にしている。
 
-    // console.log(firstDate);
-
     // 翌月の0日を指定して当月の月末日を取得
     var lastDate = new Date(year, month, 0);    //日にちを0にすると前の月の最後の日付になる
-
-    // console.log(lastDate);
 
     // 本日の日記の日付の設定
     var todayStr = year + "年" + month + "月" + today + "日";
     presetDiary(todayStr);    // presetDiary関数の呼び出し
 
-    // console.log(todayStr);
-
     // カレンダーのキャプションを表示
     var table_title = year + "年 " + month + "月";
     var captionHtml = "<caption>" + table_title + "</caption>";
 
-    // console.log(table_title);
-    // console.log(captionHtml);
-
     // 曜日の行を作成
     var weekdays = ["日", "月", "火", "水", "木", "金", "土"];
     var weekdaysStr = "<tr>";
-
-    // console.log(weekdays);
 
     for (var i = 0; i < 7; i++) {
         if (i == 0) {
@@ -52,14 +36,11 @@ window.addEventListener("DOMContentLoaded", function () {// DOMContentLoadedイ�
         }
     }
     weekdaysStr += "</tr>";
-    // console.log(weekdaysStr);
 
     // カレンダーの日付セル部分を作成
     var htmlStr = "<tr>";
     // 当月１日の曜日
     var startWeekDay = firstDate.getDay();    // 1日はその月の何曜日なのかを取得してる。4月なら1日は月曜日だから1(配列の番号)になる。
-
-    // console.log(startWeekDay);
 
     // 1日までを空白で埋める
     for (var i = 0; i < startWeekDay; i++) {
@@ -78,7 +59,7 @@ window.addEventListener("DOMContentLoaded", function () {// DOMContentLoadedイ�
 
         // 日を取得
         var cellStr = date.getDate();    // １〜３０日までの日にちを取得
-        // 日記データがあれば 日付の下にアンバーバーを表示
+        // 日記データがあれば 日付の表示を変更する
         if (localStorage[dateStr + "_title"]) cellStr = "<span class='active'>" + cellStr + "</span>";
 
         // 日曜日の場合は行の開始なのでtr開始タグ
@@ -91,29 +72,26 @@ window.addEventListener("DOMContentLoaded", function () {// DOMContentLoadedイ�
         } else {
             htmlStr += "<td>";
         }
-        // 日付をクリックした際に日記を表示
-        htmlStr += "<a onclick='presetDiary(\"" + dateStr + "\");'>" + cellStr + "</a></td>";
+        // 日付をクリックした際に日記を表示（空欄はaタグにしないためにこの処理をしてる）
+        htmlStr += "<a onclick='presetDiary(\"" + dateStr + "\");'>" + cellStr + "</a></td>";    //`\"" "\"`これ何？
 
         // 土曜日の場合は行の終わりなのでtr終了タグ
-        if (weekDay == 6) htmlStr += "</tr>\n";
+        if (weekDay == 6) htmlStr += "</tr>\n";     //`\n`は改行の意味
 
-        // console.log(htmlStr);
     }
 
-    // 月末日の曜日
+    // 月末日の曜日を取得
     var lastDayWeek = lastDate.getDay();
-
-    // console.log(lastDayWeek);
 
     // 月末日が土曜日でない場合は 空白のセルでテーブルを埋める
     if (lastDayWeek != 6) {
-        // 月末日の翌日の曜日から土曜日までをfor文で回す
+        // 月末日の翌日の曜日から土曜日までをfor文で繰り返す
         for (var i = lastDayWeek + 1; i <= 6; i++) {
             htmlStr += "<td>&nbsp;</td>";
         }
         htmlStr += "</tr>";
     }
-    document.getElementById("calendar__contents").innerHTML = "<table>" + captionHtml + weekdaysStr + htmlStr + "</table>";
+    document.getElementById("calendar__contents").innerHTML = "<table>" + captionHtml + weekdaysStr + htmlStr + "</table>";     //captionHTMLは見出し部分、weekdaysStrが曜日の列、htmlStrは各日にち
 });
 
 
@@ -121,12 +99,10 @@ window.addEventListener("DOMContentLoaded", function () {// DOMContentLoadedイ�
 カレンダーの日付と日記の入力欄のリンク
 */
 // 指定した日付の日記を表示
-function presetDiary(dateStr) {
-    // ボタンのdate属性にキーの日付部分を指定する
-    var button = document.getElementById("diary__save");
-    // console.log(button);
-    // console.log(dateStr);
-    button.setAttribute("data-date", dateStr);
+function presetDiary(dateStr) {     //日付をクリックした際の処理
+    // ボタンのdate属性にキーの日付を指定する
+    var saveBtn = document.getElementById("diary__save");
+    saveBtn.setAttribute("data-date", dateStr);
 
     // 日記の日付を表示
     var diary_date = document.getElementById("diary__date");
@@ -134,46 +110,41 @@ function presetDiary(dateStr) {
 
     // localStorageから日記のタイトルと本文を取得
     var title = localStorage[dateStr + "_title"];    //`[dateStr + "_title"]`がキーに当たる部分、`_`このアンダースコアは別になんでもいい。これに何かプログラム的な意味はない。
-    var body = localStorage[dateStr + "_body"];      //上に同乗
-    // console.log(title);
+    var body = localStorage[dateStr + "_body"];      //これはすでに保存されているlocalStorageのキー（値？）を変数に代入してるだけで、保存してるわけじゃない。 var 変数名 = localStorage~だから、逆に`変数名` = localStorage~の場合は保存になる。（保存と参照の区別がついてなかった）
 
-    // 日記の入力欄を取得
-    var diary_title = document.getElementById('diary__title');
+    // 日記の入力欄の値を取得
+    var diary_title = document.getElementById('diary__title');      //.valueつけたら値を取得できなくなった。なぜ？
     var diary_body = document.getElementById('diary__body');
-    // console.log(diary_title.value);
 
     // 日記のデータがあれば表示
-    if (title) {
-        diary_title.value = title;    //正確にはlocalStorageの値に、入力欄に記載された値をセットしてる感じ？
+    if (title) {    //このif文の書き方がよくわからん。「もしタイトルの値が定義されていれば」と言う意味のif文か？
+        diary_title.value = title;    //正確にはlocalStorageの値に、入力欄に記載された値を代入してる感じ。保存してるわけではない？
     } else {
         diary_title.value = "";
     }
 
     if (body) {
-        diary_body.value = body;    //正確にはlocalStorageの値に、入力欄に記載された値をセットしてる感じ？
+        diary_body.value = body;    //正確にはlocalStorageの値に、入力欄に記載された値を代入してる感じ。これは保存してるんじゃなくて、入力欄にlocalStorageで保存されている値を表示してるんだこれは。
     } else {
         diary_body.value = "";
     }
 }
 
-
 /*
 書いた日記を保存
 */
 // 日記を保存
-function onSave(obj) {
+function onSave(obj) {      //保存ボタンを押した時の処理・この`obj`の引数の意味がよくわからん。ボタン要素のオブジェクトらしい。
     // ボタンのdata-date属性から日付の文字列を取得
-    var dateStr = obj.getAttribute("data-date");
-    // console.log(dateStr);
+    var dateStr = obj.getAttribute("data-date");    //dateStrがかなりの肝なきがする
 
     // 日記の入力欄を取得
     var diary_title = document.getElementById('diary__title').value;
     var diary_body = document.getElementById('diary__body').value;
-    // console.log(diary_title);
 
     // 日記を保存
-    localStorage[dateStr + "_title"] = diary_title;    // 日付_titleでキー名を変数に代入してる。なぜ「_title」と言う書き方なのかはよくわからん
-    localStorage[dateStr + "_body"] = diary_body;      // ここがわからん
+    localStorage[dateStr + "_title"] = diary_title;    // 日付_titleでキー名を変数に代入してる。（保存と参照の区別がついてなかった）
+    localStorage[dateStr + "_body"] = diary_body;      // 同上
     // 完了メッセージを表示
     window.alert("日記を投稿しました");
     // ページをリロード
