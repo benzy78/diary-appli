@@ -519,7 +519,7 @@ input {
 }
 
 .main {
-	padding: 20px;
+	padding: 25px;
 	width: 100%;
 }
 
@@ -545,15 +545,15 @@ input {
 }
 
 #slide .swiper-button-prev {
-	-webkit-transform: scale(0.4);
+	-webkit-transform: scale(0.6);
 	left: -25px;
-	transform: scale(0.4);
+	transform: scale(0.6);
 }
 
 #slide .swiper-button-next {
-	-webkit-transform: scale(0.4);
+	-webkit-transform: scale(0.6);
 	right: -25px;
-	transform: scale(0.4);
+	transform: scale(0.6);
 }
 
 .task {
