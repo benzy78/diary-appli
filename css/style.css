@@ -388,7 +388,7 @@ input {
 	color: #ff0000;
 }
 
-.diary {
+.task {
 	background-color: #fff;
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -397,7 +397,7 @@ input {
 	width: 40%;
 }
 
-.diary__date {
+.task__date {
 	background-color: #9575cd;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
@@ -409,19 +409,25 @@ input {
 	text-align: center;
 }
 
-.diary__contents {
+.task__contents {
 	padding: 0 20px;
 }
 
-.diary__title {
+.task__body {
+	border: 2px solid #9575cd;
+	border-radius: 5px;
+	font-size: 14px;
+	height: 100px;
+	margin-bottom: 20px;
 	transition: all 0.3s ease-in-out;
+	width: 100%;
 }
 
-.diary__title:hover {
+.task__body:hover {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.diary__body {
+.task__reflect {
 	border: 2px solid #9575cd;
 	border-radius: 5px;
 	font-size: 14px;
@@ -431,11 +437,11 @@ input {
 	width: 100%;
 }
 
-.diary__body:hover {
+.task__reflect:hover {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.diary__save {
+.task__save {
 	background-color: #673ab7;
 	border: 1px solid #673ab7;
 	color: #fff;
@@ -444,177 +450,13 @@ input {
 	transition: all 0.3s ease-in-out;
 }
 
-.diary__save:hover {
+.task__save:hover {
 	background-color: #9575cd;
 	border-color: #9575cd;
 }
 
-.diary__delete {
-	background-color: #fff;
-	border: 1px solid #D84315;
-	color: #D84315;
-	cursor: pointer;
-	font-weight: bold;
-	transition: all 0.3s ease-in-out;
-}
-
-.diary__delete:hover {
-	background-color: #D84315;
-	color: #fff;
-}
-
 /*
-    BEMで書き直し
-*/
-
-.main {
-	padding: 40px 30px;
-}
-
-.frame-box {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	max-width: 1100px;
-	width: 85%;
-}
-
-.calendar-box {
-	flex: 0 0 auto;
-	margin-right: 40px;
-	max-width: calc(60% - 40px);
-	width: calc(60% - 40px);
-}
-
-.calendar-box .calendar {
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-box .calendar table {
-	border: solid 1px #9575cd;
-}
-
-.calendar-box .calendar table caption {
-	background: #9575cd;
-	border: solid 1px #9575cd;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	color: #fff;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 0.5em;
-}
-
-.calendar-box .calendar table td.today {
-	background: #fff;
-}
-
-.calendar-box .calendar table td {
-	background-color: #fff;
-	border: solid 1px #9575cd;
-	padding: 0;
-}
-
-.calendar-box .calendar table td a {
-	cursor: pointer;
-	display: inline-block;
-	padding: 0.8em 1em;
-	transition: all 0.3s ease-in-out;
-	width: 100%;
-}
-
-.calendar-box .calendar table td a:hover {
-	background-color: #9575cd;
-}
-
-.calendar-box .calendar table td a u {
-	font-weight: bold;
-}
-
-.calendar-box * {
-	font-size: 16px;
-	text-align: center;
-}
-
-.calendar .sat {
-	color: #4169e1;
-}
-
-.calendar .sun {
-	color: #ff0000;
-}
-
-.diary-box {
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	flex: 0 0 auto;
-	max-width: 40%;
-	width: 40%;
-}
-
-.diary-box .diary_date {
-	background-color: #9575cd;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	color: #fff;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 20px;
-	padding: 0.5em;
-	text-align: center;
-}
-
-.diary-box .diary_contents {
-	padding: 0 20px;
-}
-
-.diary-box .diary_contents input {
-	border: 2px solid #9575cd;
-	border-radius: 5px;
-	font-size: 14px;
-	margin: 0 auto 20px auto;
-	width: 100%;
-}
-
-.diary-box .diary_contents input[type=text] {
-	transition: all 0.3s ease-in-out;
-}
-
-.diary-box .diary_contents input[type=text]:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.diary-box .diary_contents textarea {
-	border: 2px solid #9575cd;
-	border-radius: 5px;
-	font-size: 14px;
-	height: 200px;
-	margin-bottom: 20px;
-	transition: all 0.3s ease-in-out;
-	width: 100%;
-}
-
-.diary-box .diary_contents textarea:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.diary-box .diary_contents input[type=button] {
-	background-color: #673ab7;
-	border: 1px solid #673ab7;
-	color: #fff;
-	cursor: pointer;
-	font-weight: bold;
-	transition: all 0.3s ease-in-out;
-}
-
-.diary-box .diary_contents input[type=button]:hover {
-	background-color: #512DA8;
-}
-
-/*
-    diary end
+    BEMで書き直し end
 */
 
 /*
@@ -654,10 +496,6 @@ input {
 	width: 95%;
 }
 
-.frame-box {
-	width: 95%;
-}
-
 }
 
 @media (max-width: 768px) {
@@ -688,68 +526,21 @@ input {
 	padding: 0.5em;
 }
 
-.diary {
+.task {
 	max-width: 100%;
 	width: 100%;
 }
 
-.diary__date {
+.task__date {
 	font-size: 14px;
 	padding: 0.5em;
 }
 
-.diary__title {
+.task__body {
 	font-size: 12px;
 }
 
-.diary__body {
-	font-size: 12px;
-}
-
-.main {
-	padding: 20px;
-}
-
-.frame-box {
-	width: 100%;
-}
-
-.calendar-box {
-	margin-bottom: 20px;
-	margin-right: 0;
-	max-width: 100%;
-	width: 100%;
-}
-
-.calendar-box .calendar table caption {
-	font-size: 14px;
-	padding: 0.5em;
-}
-
-.calendar-box .calendar table td {
-	font-size: 14px;
-}
-
-.calendar-box .calendar table td a {
-	font-size: 14px;
-	padding: 0.5em;
-}
-
-.diary-box {
-	max-width: 100%;
-	width: 100%;
-}
-
-.diary-box .diary_date {
-	font-size: 14px;
-	padding: 0.5em;
-}
-
-.diary-box .diary_contents input[type=text] {
-	font-size: 12px;
-}
-
-.diary-box .diary_contents textarea {
+.task__reflect {
 	font-size: 12px;
 }
 

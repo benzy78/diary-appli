@@ -116,7 +116,7 @@
 }
 
 // 日記
-.diary {
+.task {
     background-color: $white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -150,7 +150,13 @@
         padding: 0 20px;
     }
 
-    &__title {
+    &__body {
+        margin-bottom: 20px;
+        border: 2px solid $SubColor2;
+        border-radius: 5px;
+        font-size: 14px;
+        height: 100px;
+        width: 100%;
         transition: all 0.3s ease-in-out;
 
         @include sp {
@@ -162,7 +168,7 @@
         }
     }
 
-    &__body {
+    &__reflect {
         margin-bottom: 20px;
         border: 2px solid $SubColor2;
         border-radius: 5px;
@@ -193,232 +199,8 @@
             border-color: $SubColor2;
         }
     }
-
-    &__delete {
-        background-color: $white;
-        border: 1px solid $AccentColor;
-        color: $AccentColor;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.3s ease-in-out;
-
-        &:hover{
-            color: $white;
-            background-color: $AccentColor;
-        }
-    }
 }
 
 /*
-    BEMで書き直し
-*/
-
-
-
-
-.main {
-    padding: 40px 30px;
-
-    @include sp {
-        padding: 20px;
-    }
-}
-
-
-.frame-box {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    width: 85%;
-
-    @include tab {
-        width: 95%;
-    }
-
-    @include sp {
-        width: 100%;
-    }
-}
-
-// カレンダー
-
-.calendar-box {
-    margin-right: 40px;
-    flex: 0 0 auto;
-    width: calc(60% - 40px);
-    max-width: calc(60% - 40px);
-
-    @include sp {
-        margin-right: 0;
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-
-    .calendar {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-
-        table {
-            border: solid 1px $SubColor2;
-
-            caption {
-                padding: 0.5em;
-                border: solid 1px $SubColor2;
-                border-top-right-radius: 5px;
-                border-top-left-radius: 5px;
-                background: $SubColor2;
-                color: $white;
-                font-size: 20px;
-                font-weight: bold;
-
-                @include sp {
-                    padding: 0.5em;
-                    font-size: 14px;
-                }
-            }
-
-            td.today {
-                background: $white;
-            }
-
-            td {
-                padding: 0;
-                border: solid 1px $SubColor2;
-                background-color: $white;
-
-                @include sp {
-                    font-size: 14px;
-                }
-
-                a {
-                    padding: 0.8em 1em;
-                    cursor: pointer;
-                    display: inline-block;
-                    transition: all 0.3s ease-in-out;
-                    width: 100%;
-
-                    @include sp {
-                        padding: 0.5em;
-                        font-size: 14px;
-                    }
-
-                    &:hover {
-                        background-color: $SubColor2;
-                    }
-
-                    u {
-                        font-weight: bold;
-                    }
-                }
-            }
-        }
-    }
-
-    * {
-        text-align: center;
-        font-size: 16px;
-    }
-}
-
-
-.calendar .sat {
-    color: #4169e1;
-}
-
-.calendar .sun {
-    color: #ff0000;
-}
-
-// メモ
-.diary-box {
-    background-color: $white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 0 0 auto;
-    width: 40%;
-    max-width: 40%;
-
-    @include sp {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .diary_date {
-        padding: 0.5em;
-        margin-bottom: 20px;
-        background-color: $SubColor2;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-        color: $white;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-
-        @include sp {
-            padding: 0.5em;
-            font-size: 14px;
-        }
-    }
-
-    .diary_contents {
-        padding: 0 20px;
-
-        input {
-            margin: 0 auto 20px auto;
-            border: 2px solid $SubColor2;
-            border-radius: 5px;
-            font-size: 14px;
-            width: 100%;
-        }
-
-        input[type=text] {
-            transition: all 0.3s ease-in-out;
-
-            @include sp {
-                font-size: 12px;
-            }
-
-            &:hover {
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        textarea {
-            margin-bottom: 20px;
-            border: 2px solid $SubColor2;
-            border-radius: 5px;
-            font-size: 14px;
-            height: 200px;
-            width: 100%;
-            transition: all 0.3s ease-in-out;
-
-            @include sp {
-                font-size: 12px;
-            }
-
-            &:hover {
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        input[type=button] {
-            background-color: $MainColor;
-            border: 1px solid $MainColor;
-            color: $white;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-                background-color: $SubColor;
-            }
-        }
-    }
-}
-
-/*
-    diary end
+    BEMで書き直し end
 */
