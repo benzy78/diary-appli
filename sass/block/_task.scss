@@ -29,16 +29,14 @@
 
     @include sp {
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         width: 100%;
         max-width: 100%;
     }
 
     &__contents {
-        display: inline-block;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
-        width: 48%;
 
         * {
             text-align: center;
@@ -112,11 +110,31 @@
     }
 }
 
-.calendar__contents--02{
-    margin-top: 40px;
-    display: inline-block;
-    width: 50%;
+#slide{
+    .swiper{
+        &-button-prev{
+            left: -30px;
+            transform: scale(0.8);
+            @include sp{
+                left: -25px;
+                transform: scale(0.4);
+            }
+        }
+        &-button-next{
+            right: -30px;
+            transform: scale(0.8);
+            @include sp{
+                right: -25px;
+                transform: scale(0.4);
+            }
+        }
+        &-pagination{
+            bottom: -30px;
+        }
+    }
 }
+
+
 
 // 日記
 .task {

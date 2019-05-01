@@ -9,10 +9,11 @@
     <meta name="keywords" content="">
     <!--style css-->
     <link rel="stylesheet" href="css/style.css" media="all">
+    <!-- google-font -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese" rel="stylesheet">
-    <!-- wow -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
-        type="text/css" media="all">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+
 
 </head>
 
@@ -29,10 +30,16 @@
         <!-- main -->
         <main class="main">
             <div class="calendar">
-                <div class="slide">
-                    <div id="calendar__contents" class="calendar__contents"></div>
-                    <div id="calendar__contents--02" class="calendar__contents calendar__contents--02"></div>
+                <div id="slide" class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div id="calendar__contents--02" class="calendar__contents swiper-slide"></div>
+                        <div id="calendar__contents" class="calendar__contents swiper-slide"></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
+
             </div>
             <div class="task">
                 <div id="task__date" class="task__date"></div>
@@ -50,8 +57,10 @@
 
     <!-- script js-->
     <script src="js/script.js"></script>
-    <!-- wow -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    <!-- slide.js -->
+    <script src="js/slide.js"></script>
 
 </body>
 

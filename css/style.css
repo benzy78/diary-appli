@@ -354,8 +354,6 @@ input {
 .calendar__contents {
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	display: inline-block;
-	width: 48%;
 }
 
 .calendar__contents * {
@@ -414,10 +412,20 @@ input {
 	color: #ff0000;
 }
 
-.calendar__contents--02 {
-	display: inline-block;
-	margin-top: 40px;
-	width: 50%;
+#slide .swiper-button-prev {
+	-webkit-transform: scale(0.8);
+	left: -30px;
+	transform: scale(0.8);
+}
+
+#slide .swiper-button-next {
+	-webkit-transform: scale(0.8);
+	right: -30px;
+	transform: scale(0.8);
+}
+
+#slide .swiper-pagination {
+	bottom: -30px;
 }
 
 .task {
@@ -515,7 +523,7 @@ input {
 }
 
 .calendar {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	margin-right: 0;
 	max-width: 100%;
 	width: 100%;
@@ -533,6 +541,18 @@ input {
 .calendar__contents table td a {
 	font-size: 14px;
 	padding: 0.5em;
+}
+
+#slide .swiper-button-prev {
+	-webkit-transform: scale(0.4);
+	left: -25px;
+	transform: scale(0.4);
+}
+
+#slide .swiper-button-next {
+	-webkit-transform: scale(0.4);
+	right: -25px;
+	transform: scale(0.4);
 }
 
 .task {
