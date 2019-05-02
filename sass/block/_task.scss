@@ -209,7 +209,8 @@
 
     &__save {
         background-color: $MainColor;
-        border: 1px solid $MainColor;
+        border: $MainColor;
+        border-radius: 50px;
         color: $white;
         cursor: pointer;
         font-weight: bold;
